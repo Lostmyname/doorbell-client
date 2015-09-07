@@ -5,17 +5,17 @@ import os
 import sys
 global pusher # ugh
 
-pin = 12
+pin = 3
 
 GPIO.setmode(GPIO.BOARD)
-GPIO.setup(pin, GPIO.OUT)
+GPIO.setup(pin, GPIO.OUT, initial=True)
 
 try:
   def buzz(data):
-    GPIO.output(pin, True)
+    GPIO.output(pin, False)
     print 'Door open'
     time.sleep(3)
-    GPIO.output(pin, False)
+    GPIO.output(pin, True)
     print 'Door shut!'
 
   def bind_to_channel(data):
