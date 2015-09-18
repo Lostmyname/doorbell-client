@@ -14,9 +14,10 @@ try:
   def buzz(data):
     GPIO.output(pin, False)
     print 'Door open'
-    time.sleep(3)
+    time.sleep(1)
     GPIO.output(pin, True)
     print 'Door shut!'
+    time.sleep(5)
 
   def bind_to_channel(data):
     channel = pusher.subscribe('doorbell')
